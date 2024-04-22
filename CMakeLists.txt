@@ -6,6 +6,8 @@ set(CMAKE_CXX_STANDARD 17)
 # Add An Option To Build The Examples
 option(BUILD_EXAMPLES "Build The Examples" ON)
 
+include_directories(external/eigen)
+
 add_library(GraphCPP INTERFACE)
 
 target_include_directories(GraphCPP INTERFACE

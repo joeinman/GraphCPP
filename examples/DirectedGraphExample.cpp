@@ -3,17 +3,20 @@
 
 int main()
 {
-    GraphCPP::DirectedGraph<char> graph;
+    GraphCPP::DirectedGraph<int> graph;
 
-    graph.addNode('a');
-    graph.addNode('b');
-    graph.addNode('c');
+    graph.addNode(1);
+    graph.addNode(2);
+    graph.addNode(3);
 
-    graph.addEdge('a', 'b', 1);
-    graph.addEdge('b', 'c', 2);
-    graph.addEdge('c', 'a', 3);
+    graph.addEdge(1, 2, 1);
+    graph.addEdge(2, 3, 1);
+    graph.addEdge(3, 1, 1);
 
-    std::vector<char> neighbors = graph.getNeighbors('a');
-    for (const char &neighbor : neighbors)
-        std::cout << neighbor << std::endl;
+    // Get Neighbours
+    std::cout << "Neighbours of 1: ";
+    for (auto &neighbour : graph.getNeighbors(1))
+    {
+        std::cout << neighbour << " ";
+    }
 }

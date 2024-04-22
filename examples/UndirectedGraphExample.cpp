@@ -8,12 +8,15 @@ int main()
     graph.addNode('a');
     graph.addNode('b');
     graph.addNode('c');
+    graph.addNode('d');
 
     graph.addEdge('a', 'b', 1);
-    graph.addEdge('b', 'c', 2);
-    graph.addEdge('c', 'a', 3);
+    graph.addEdge('b', 'c', 1);
+    graph.addEdge('c', 'a', 1);
+    graph.addEdge('a', 'd', 1);
+    // graph.addEdge('d', 'c', 1);
+    // graph.addEdge('d', 'b', 1);
 
-    std::vector<char> neighbors = graph.getNeighbors('a');
-    for (const char &neighbor : neighbors)
-        std::cout << neighbor << std::endl;
+    std::cout << "Fiedler Value: " << graph.getFiedlerValue() << std::endl;
+    std::cout << "Spectral Gap: " << graph.getSpectralGap() << std::endl;
 }
