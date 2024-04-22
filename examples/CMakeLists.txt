@@ -1,0 +1,7 @@
+# Add an executable for UndirectedGraphExample
+add_executable(UndirectedGraphExample UndirectedGraphExample.cpp)
+target_link_libraries(UndirectedGraphExample GraphCPP)
+
+# Add an executable for DirectedGraphExample
+add_executable(DirectedGraphExample DirectedGraphExample.cpp)
+target_link_libraries(DirectedGraphExample GraphCPP)
